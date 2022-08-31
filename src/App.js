@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from 'antd'
+import SvgLoader from './components/SvgLoader'
+const { Header, Footer, Sider, Content } = Layout
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main-component'>
+      <Layout>
+        <Header className='grid-item-1' style={{ background: '#000000' }}>
+          <SvgLoader className='site-logo' type='meama-logo' />
+          <SvgLoader className='header-bg' type='header-svg' />
+        </Header>
+        <Content className='grid-item-2'>Content</Content>
+        <Footer className='grid-item-3' style={{ background: 'green' }}>
+          Footer
+        </Footer>
+      </Layout>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

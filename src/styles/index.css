@@ -1,0 +1,32 @@
+@import '~antd/dist/antd.css';
+
+
+
+.main-component {
+  max-width: 600px;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 100%;
+  grid-template-rows:100%;
+  height: 100vh;
+}
+
+.grid-item-1 {
+    height: 40%;
+    position: relative;
+}
+
+.site-logo {
+    margin-top: 50px;
+}
+
+.header-bg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+
