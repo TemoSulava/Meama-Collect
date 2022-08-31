@@ -1,8 +1,20 @@
 import { Layout } from 'antd'
 import SvgLoader from './components/SvgLoader'
-const { Header, Footer,  Content } = Layout
+import { useTranslation, Trans } from 'react-i18next'
+import { useEffect } from 'react'
+
+const { Header, Footer, Content } = Layout
 
 function App() {
+  const { t, i18n } = useTranslation()
+
+  useEffect(() => {
+    const lng = navigator.language
+    i18n.changeLanguage(lng)
+  }, [])
+
+  const lng = navigator.language
+
   return (
     <div className='main-component'>
       <Layout>
