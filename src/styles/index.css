@@ -1,6 +1,22 @@
 @import '~antd/dist/antd.css';
 
+.body {
+    font-family: 'FiraGO', sans-serif;
+}
 
+.white-text {
+    color: #ffff;
+}
+
+.no-border {
+    border: none;
+}
+
+.lang {
+    position: absolute;
+    top: 14%;
+    left: 90%;
+}
 
 .main-component {
   max-width: 600px;

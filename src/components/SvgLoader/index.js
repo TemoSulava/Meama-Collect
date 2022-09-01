@@ -1,11 +1,15 @@
 import React from 'react'
 
 const SvgLoader = ({ type, className }) => {
-
   switch (type) {
     case 'header-svg':
       return (
-        <svg className={className} xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 433.3 297.035'>
+        <svg
+          className={className}
+          xmlns='http://www.w3.org/2000/svg'
+          width='100%'
+          height='100%'
+          viewBox='0 0 433.3 297.035'>
           <g
             id='_201201-Meama-Open_Pattern_File'
             data-name='201201-Meama-Open_Pattern_File'
@@ -878,7 +882,12 @@ const SvgLoader = ({ type, className }) => {
       )
     case 'meama-logo':
       return (
-        <svg className={className} xmlns='http://www.w3.org/2000/svg' width='79.58' height='76.719' viewBox='0 0 79.58 76.719'>
+        <svg
+          className={className}
+          xmlns='http://www.w3.org/2000/svg'
+          width='79.58'
+          height='76.719'
+          viewBox='0 0 79.58 76.719'>
           <g id='Group_6' data-name='Group 6' transform='translate(-131.427 -138.57)'>
             <g id='Group_1' data-name='Group 1' transform='translate(147.427 138.57)'>
               <path
@@ -987,6 +996,37 @@ const SvgLoader = ({ type, className }) => {
                   />
                 </g>
               </g>
+            </g>
+          </g>
+        </svg>
+      )
+    case 'language-menu':
+      return (
+        <svg className={className} xmlns='http://www.w3.org/2000/svg' width='47' height='26' viewBox='0 0 47 26'>
+          <g id='Group_770' data-name='Group 770' transform='translate(0.045 -203)'>
+            <text id='ქა' transform='translate(31.955 221)' fill='#fff' font-size='14' font-family='SegoeUI, Segoe UI'>
+              <tspan x='0' y='0'>
+                ქა
+              </tspan>
+            </text>
+            <g id='Group_161' data-name='Group 161' transform='translate(14.56 1)'>
+              <rect
+                id='Rectangle_303'
+                data-name='Rectangle 303'
+                width='26'
+                height='26'
+                transform='translate(-14.605 202)'
+                fill='#fff'
+                opacity='0'
+              />
+              <path
+                id='worldwide'
+                d='M9.6,0a9.6,9.6,0,1,0,9.6,9.6A9.6,9.6,0,0,0,9.6,0Zm7.771,7.3a13.954,13.954,0,0,0-4.258-1.213A13.952,13.952,0,0,0,11.9,1.83,8.125,8.125,0,0,1,17.372,7.3ZM9.6,1.5c1,0,1.774,3.2,1.972,4.423a26.843,26.843,0,0,0-3.944,0C7.812,4.789,8.587,1.5,9.6,1.5ZM1.5,9.6c0-1,3.2-1.774,4.423-1.972a26.843,26.843,0,0,0,0,3.944C4.789,11.39,1.5,10.616,1.5,9.6Zm.33,2.3a13.954,13.954,0,0,0,4.258,1.213A13.952,13.952,0,0,0,7.3,17.372,8.125,8.125,0,0,1,1.83,11.9ZM6.088,6.088A13.953,13.953,0,0,0,1.83,7.3,8.124,8.124,0,0,1,7.3,1.83,13.95,13.95,0,0,0,6.088,6.088ZM9.6,17.7c-1,0-1.774-3.2-1.972-4.423a26.843,26.843,0,0,0,3.944,0C11.39,14.414,10.616,17.7,9.6,17.7ZM11.76,11.76a25.356,25.356,0,0,1-4.317,0,25.356,25.356,0,0,1,0-4.317,25.356,25.356,0,0,1,4.317,0A25.356,25.356,0,0,1,11.76,11.76Zm.142,5.613a13.952,13.952,0,0,0,1.213-4.258A13.952,13.952,0,0,0,17.372,11.9,8.125,8.125,0,0,1,11.9,17.372Zm1.378-5.8a26.843,26.843,0,0,0,0-3.944c1.135.183,4.423.957,4.423,1.972S14.507,11.375,13.279,11.573Zm0,0'
+                transform='translate(-10.734 205.871)'
+                fill='#fff'
+                stroke='#fff'
+                stroke-width='0.4'
+              />
             </g>
           </g>
         </svg>
