@@ -1,24 +1,22 @@
 @import '~antd/dist/antd.css';
 
 .body {
-    font-family: 'FiraGO', sans-serif;
+  font-family: 'FiraGO', sans-serif;
 }
 
 .white-text {
-    color: #ffff;
+  color: #ffff;
 }
 
 .no-border {
-    border: none;
+  border: none;
 }
 
 .lang {
-    position: absolute;
-    top: 14%;
-    left: 90%;
+  position: absolute;
+  top: 14%;
+  left: 90%;
 }
-
-
 
 .main-component {
   max-width: 600px;
@@ -27,33 +25,31 @@
   justify-content: center;
   align-content: center;
   grid-template-columns: 100%;
-  grid-template-rows:100%;
+  grid-template-rows: 100%;
   height: 100vh;
 }
 
 .grid-item-1 {
-    height: 40%;
-    position: relative;
+  height: 40%;
+  position: relative;
 }
 
 .flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: stretch;
-    flex-wrap: nowrap;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .site-logo {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .header-bg {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
-
-
