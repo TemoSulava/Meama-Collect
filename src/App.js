@@ -23,7 +23,7 @@ function App() {
     i18n.changeLanguage(lng)
   }, [])
 
-  const handleRadio = (e) => {
+  const handleRadioChange = (e) => {
     setLangRadioValue(e.target.value)
   }
 
@@ -61,7 +61,7 @@ function App() {
             buttonType='ghost'
             shape='circle'
             ghost>
-            <Radio className='flex-container' value={langRadioValue} onChange={handleRadio} data={data} />
+            <Radio className='flex-container' value={langRadioValue} onChange={handleRadioChange} data={data} />
           </Modal>
         </Header>
         <Content className='grid-item-2'>Content</Content>
