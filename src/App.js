@@ -4,6 +4,8 @@ import SvgLoader from './components/SvgLoader'
 import { useTranslation, Trans } from 'react-i18next'
 import { useState, useEffect } from 'react'
 import Modal from './components/Modal'
+import useFetch from './customHooks/useFetch'
+import projectApis from './apis'
 
 const { Header, Footer, Content } = Layout
 
@@ -12,10 +14,19 @@ function App() {
 
   const { t, i18n } = useTranslation()
 
-  useEffect(() => {
-    const lng = navigator.language
-    i18n.changeLanguage(lng)
-  }, [])
+  const { data, loading, error } = useFetch(projectApis.SUPPORTED_LANGUAGES)
+
+   useEffect(() => {
+     const lng = navigator.language
+     i18n.changeLanguage(lng)
+   }, [])
+
+  if (error) console.error(error)
+
+  if (loading) return <div>Placeholder loading text...</div>
+
+ 
+  console.log(data)
 
   const lng = navigator.language
 
@@ -32,11 +43,9 @@ function App() {
             setShowModal={() => setShowLanguageSelector(true)}
             show={showLanguageSelector}
             onOk={() => {
-              console.log('ok clicked')
               setShowLanguageSelector(false)
             }}
             onCancel={() => {
-              console.log('cancel clicked')
               setShowLanguageSelector(false)
             }}
             okText='არჩევა'
@@ -44,9 +53,8 @@ function App() {
             title='ენა'
             buttonType='ghost'
             shape='circle'
-            ghost
-          >
-           <p>options</p>
+            ghost>
+
           </Modal>
         </Header>
         <Content className='grid-item-2'>Content</Content>
