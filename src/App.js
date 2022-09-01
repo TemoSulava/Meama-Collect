@@ -1,4 +1,4 @@
-import { Layout } from 'antd'
+import { Layout, Radio } from 'antd'
 
 import SvgLoader from './components/SvgLoader'
 import { useTranslation, Trans } from 'react-i18next'
@@ -11,22 +11,26 @@ const { Header, Footer, Content } = Layout
 
 function App() {
   const [showLanguageSelector, setShowLanguageSelector] = useState(false)
+  const [langRadioValue, setLangRadioValue] = useState(null)
 
   const { t, i18n } = useTranslation()
 
   const { data, loading, error } = useFetch(projectApis.SUPPORTED_LANGUAGES)
 
-   useEffect(() => {
-     const lng = navigator.language
-     i18n.changeLanguage(lng)
-   }, [])
+  useEffect(() => {
+    const lng = navigator.language
+    i18n.changeLanguage(lng)
+  }, [])
+
+  const handleRadio = (e) => {
+    setLangRadioValue(e.target.value)
+  }
 
   if (error) console.error(error)
 
   if (loading) return <div>Placeholder loading text...</div>
 
- 
-  console.log(data)
+  console.log(langRadioValue)
 
   const lng = navigator.language
 
@@ -44,9 +48,11 @@ function App() {
             show={showLanguageSelector}
             onOk={() => {
               setShowLanguageSelector(false)
+              setLangRadioValue(null)
             }}
             onCancel={() => {
               setShowLanguageSelector(false)
+              setLangRadioValue(null)
             }}
             okText='არჩევა'
             cancelText='დახურვა'
@@ -54,7 +60,16 @@ function App() {
             buttonType='ghost'
             shape='circle'
             ghost>
-
+            <div className='flex-container'>
+              {data?.map((language) => (
+                <>
+                  <img key={language.id} src={language.imageUrl} alt='Language' />
+                  <Radio.Group onChange={handleRadio} value={langRadioValue}>
+                    <Radio key={language.id} value={language.name}>{language.name}</Radio>
+                  </Radio.Group>
+                </>
+              ))}
+            </div>
           </Modal>
         </Header>
         <Content className='grid-item-2'>Content</Content>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SvgLoader = ({ type, className }) => {
+const SvgLoader = ({ type, className, langId }) => {
   switch (type) {
     case 'header-svg':
       return (
@@ -1004,9 +1004,14 @@ const SvgLoader = ({ type, className }) => {
       return (
         <svg className={className} xmlns='http://www.w3.org/2000/svg' width='47' height='26' viewBox='0 0 47 26'>
           <g id='Group_770' data-name='Group 770' transform='translate(0.045 -203)'>
-            <text id='ქა' transform='translate(31.955 221)' fill='#fff' font-size='14' font-family='SegoeUI, Segoe UI'>
+            <text
+              id='lang_1'
+              transform='translate(31.955 221)'
+              fill='#fff'
+              font-size='14'
+              font-family='SegoeUI, Segoe UI'>
               <tspan x='0' y='0'>
-                ქა
+                {langId ? langId: 'ka'}
               </tspan>
             </text>
             <g id='Group_161' data-name='Group 161' transform='translate(14.56 1)'>

@@ -18,6 +18,8 @@
     left: 90%;
 }
 
+
+
 .main-component {
   max-width: 600px;
   margin: auto;
@@ -32,6 +34,15 @@
 .grid-item-1 {
     height: 40%;
     position: relative;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .site-logo {
