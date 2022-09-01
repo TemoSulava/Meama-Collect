@@ -7,31 +7,35 @@ const ModalComponent = ({
   title,
   buttonStyle,
   buttonText,
+  cancelText,
+  onOk = () => {},
+  onCancel = () => {},
+  okText,
+  setShowModal,
+  show = false,
   noBorder = false,
   icon,
   buttonType = 'primary',
   shape = 'default'
 }) => {
-  const [isModalVisible, setIsModalVisible] = useState(false)
-
-  const showModal = () => {
-    setIsModalVisible(true)
-  }
-
-  const handleOk = () => {
-    setIsModalVisible(false)
-  }
-
-  const handleCancel = () => {
-    setIsModalVisible(false)
-  }
-
   return (
     <>
-      <Button className={noBorder ? buttonStyle + ' no-border': buttonStyle} shape={shape} type={buttonType} onClick={showModal}>
+      <Button
+        className={noBorder ? buttonStyle + ' no-border' : buttonStyle}
+        shape={shape}
+        type={buttonType}
+        onClick={setShowModal}>
         <p className='white-text'>{buttonText ? buttonText : icon}</p>
       </Button>
-      <Modal className='white-text ' title={title} icon={icon} shape={shape} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+      <Modal
+        cancelText={cancelText}
+        okText={okText}
+        title={title}
+        icon={icon}
+        shape={shape}
+        visible={show}
+        onOk={onOk}
+        onCancel={onCancel}>
         {children ? children : null}
       </Modal>
     </>
