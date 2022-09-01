@@ -1,9 +1,10 @@
-import { Layout, Radio } from 'antd'
+import { Layout } from 'antd'
 
 import SvgLoader from './components/SvgLoader'
 import { useTranslation, Trans } from 'react-i18next'
 import { useState, useEffect } from 'react'
 import Modal from './components/Modal'
+import Radio from './components/Radio'
 import useFetch from './customHooks/useFetch'
 import projectApis from './apis'
 
@@ -60,16 +61,7 @@ function App() {
             buttonType='ghost'
             shape='circle'
             ghost>
-            <div className='flex-container'>
-              {data?.map((language) => (
-                <>
-                  <img key={language.id} src={language.imageUrl} alt='Language' />
-                  <Radio.Group onChange={handleRadio} value={langRadioValue}>
-                    <Radio key={language.id} value={language.name}>{language.name}</Radio>
-                  </Radio.Group>
-                </>
-              ))}
-            </div>
+            <Radio value={langRadioValue} onChange={handleRadio} data={data} />
           </Modal>
         </Header>
         <Content className='grid-item-2'>Content</Content>
