@@ -61,7 +61,7 @@ function App() {
             buttonType='ghost'
             shape='circle'
             ghost>
-            <Radio value={langRadioValue} onChange={handleRadio} data={data} />
+            <Radio className='flex-container' value={langRadioValue} onChange={handleRadio} data={data} />
           </Modal>
         </Header>
         <Content className='grid-item-2'>Content</Content>

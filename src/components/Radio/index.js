@@ -2,9 +2,9 @@ import React from 'react'
 import {  Radio } from 'antd'
 
 
-const RadioComponent = ({data, onChange, value}) => {
+const RadioComponent = ({data, onChange, value, className}) => {
   return (
-    <div className='flex-container'>
+    <div className={className}>
       {data?.map((language) => (
         <>
           <img key={language.id} src={language.imageUrl} alt='Language' />
