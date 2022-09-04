@@ -1,0 +1,16 @@
+.parent-width {
+    width: 100%;
+}
+
+.flex-scroll-container {
+  display: flex;
+  justify-content: space-around;
+  white-space: no-wrap;
+}
+
+
+.text-wrap{
+    display: break-word;
+    word-wrap: normal;
+}
+

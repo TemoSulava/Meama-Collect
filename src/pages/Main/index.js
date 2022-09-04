@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Layout } from 'antd'
 
 import projectApis from '../../apis'
@@ -9,22 +9,24 @@ import useFetch from '../../customHooks/useFetch'
 
 import SvgLoader from '../../components/SvgLoader'
 
+import ItemScroll from '../../components/ItemScroll'
 
 const { Header, Footer, Content } = Layout
 
 const Main = () => {
-
   const { data, loading, error } = useFetch(projectApis.PRODUCTS)
 
-     if (error) console.error(error)
+  if (error) console.error(error)
 
-     if (loading) return <div>Placeholder loading text...</div>
+  if (loading) return <div>Placeholder loading text...</div>
 
-     const generalData = data && data[0]
 
-     //TODO 1: Use general data in the header along with 3 cards to render vertically.
-     //TODO: 2: use rest of the data to render as rows according to the titles in the content body
-     //TODO 3(optional): Create filter to filter for the subCategories where accessable
+  const coffeeData = data && data[1]
+
+
+  //TODO 1: Use general data in the header along with 3 cards to render vertically.
+  //TODO: 2: use rest of the data to render as rows according to the titles in the content body
+  //TODO 3(optional): Create filter to filter for the subCategories where accessable
 
   return (
     <div className='main-component'>
@@ -33,8 +35,9 @@ const Main = () => {
           <SvgLoader className='site-logo' type='meama-logo' />
           <SvgLoader className='header-bg' type='header-svg' />
           <LanguageSelector />
+          <ItemScroll data={coffeeData} title='ყავის მენიუ' />
         </Header>
-        <Content className='grid-item-2'>Content</Content>
+        <Content className='grid-item-2'></Content>
         <Footer className='grid-item-3' style={{ background: 'green' }}>
           Footer
         </Footer>
