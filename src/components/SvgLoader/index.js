@@ -1008,8 +1008,8 @@ const SvgLoader = ({ type, className, langId }) => {
               id='lang_1'
               transform='translate(31.955 221)'
               fill='#fff'
-              font-size='14'
-              font-family='SegoeUI, Segoe UI'>
+              fontSize='14'
+              fontFamily='SegoeUI, Segoe UI'>
               <tspan x='0' y='0'>
                 {langId ? langId: 'ka'}
               </tspan>

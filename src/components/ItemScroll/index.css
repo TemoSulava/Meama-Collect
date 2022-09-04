@@ -6,11 +6,8 @@
   display: flex;
   justify-content: space-around;
   white-space: no-wrap;
+  overflow: auto;
 }
 
 
-.text-wrap{
-    display: break-word;
-    word-wrap: normal;
-}
 

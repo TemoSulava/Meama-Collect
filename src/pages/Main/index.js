@@ -20,12 +20,12 @@ const Main = () => {
 
   if (loading) return <div>Placeholder loading text...</div>
 
+  if(!data) return null
 
-  const coffeeData = data && data[1]
+  console.log(data)
+  
+  const coffeeData = data[1]
 
-
-  //TODO 1: Use general data in the header along with 3 cards to render vertically.
-  //TODO: 2: use rest of the data to render as rows according to the titles in the content body
   //TODO 3(optional): Create filter to filter for the subCategories where accessable
 
   return (
