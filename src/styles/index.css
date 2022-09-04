@@ -4,6 +4,9 @@
   font-family: 'FiraGO', sans-serif;
 }
 
+#root {
+  background: #E8E8E8;
+}
 
 .white-text {
   color: #ffff;
