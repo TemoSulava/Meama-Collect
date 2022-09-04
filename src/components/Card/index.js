@@ -6,6 +6,7 @@ const Card = ({
   description,
   descriptionTitle,
   metaClassName = null,
+  backgroundColor = null,
   cardClassName,
   coverImage = null,
   imageAltText = 'image desc',
@@ -22,7 +23,7 @@ const Card = ({
       coverImage ? (
         <img
           alt={imageAltText}
-          style={{ maxWidth: '100%', maxHeight: '100%', backgroundColor: 'none' }}
+          style={{ maxWidth: '100%', maxHeight: '100%' }}
           src={coverImage}
         />
       ) : null
