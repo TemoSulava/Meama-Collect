@@ -1,5 +1,12 @@
 .content-item {
     height: auto;
-    max-height: 100vh;
-    background: #ffff
+    min-height: 100vh;
+    background: #ffff;
+    
 }
+
+.ant-layout-content {
+    min-height: max-content !important;
+}
+
+

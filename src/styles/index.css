@@ -1,12 +1,11 @@
 @import '~antd/dist/antd.css';
 
-.body {
+body {
   font-family: 'FiraGO', sans-serif;
-}
-
-#root {
+  height: 1740 !important;
   background: #E8E8E8;
 }
+
 
 .white-text {
   color: #ffff;
