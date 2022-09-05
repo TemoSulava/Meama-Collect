@@ -45,6 +45,7 @@ const Main = () => {
           <LanguageSelector />
           <ItemScroll data={coffeeData} style={{ marginTop: '50px' }} title='ყავის მენიუ' />
         </Header>
+        {/*TODO: NEED TO REFACTOR REDUNDANT ItemScroll usage*/}
         <Content style={{ minHeight: 'none' }} className='content-item'>
           <ItemScroll data={teaData} marginLeft='40px' style={{ marginTop: '30%' }} title='ჩაი' titleColor='#00000' />
           <ItemScroll
@@ -61,7 +62,6 @@ const Main = () => {
             title='ორცხობილები'
             titleColor='#00000'
           />
-          {/*render all items refactor all the items inside of a single map*/}
         </Content>
       </Layout>
     </div>
