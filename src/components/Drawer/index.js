@@ -1,15 +1,15 @@
 import { Button, Drawer as AntDrawer,  Space } from 'antd'
 import React, {useEffect, useState} from 'react'
 
-const Drawer = ({placement = 'bottom', showDrawer = false,  onOk = () => {}, onClose = () => {}  }) => {
+const Drawer = ({placement = 'bottom', showDrawer,  onOk = () => {}, onClose = () => {}  }) => {
 
     const [show, setShow] = useState(showDrawer)
 
-    console.log(show)
+    console.log(showDrawer)
 
     useEffect(() => {
-      setShow(show)
-    }, [show])
+      setShow(showDrawer)
+    }, [showDrawer])
 
   return (
     <>

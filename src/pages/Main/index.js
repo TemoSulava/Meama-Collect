@@ -33,6 +33,8 @@ const Main = () => {
 
   const cookies = data[6]
 
+  console.log(showIndividualProductDataDrawer)
+
   return (
     <div className='main-component'>
       <Layout style={{ background: '#fffff' }}>
@@ -40,7 +42,13 @@ const Main = () => {
           <SvgLoader className='site-logo' type='meama-logo' />
           <SvgLoader className='header-bg' type='header-svg' />
           <LanguageSelector />
-          <ItemScroll data={coffeeData} style={{ marginTop: '50px' }} title='ყავის მენიუ' />
+
+          <ItemScroll
+            setShowCustomDrawer={setShowIndividualProductDataDrawer}
+            data={coffeeData}
+            style={{ marginTop: '50px' }}
+            title='ყავის მენიუ'
+          />
           <Drawer
             setShowDrawer={setShowIndividualProductDataDrawer}
             onClose={() => setShowIndividualProductDataDrawer(false)}
@@ -50,11 +58,19 @@ const Main = () => {
         </Header>
         {/*TODO: NEED TO REFACTOR REDUNDANT ItemScroll usage*/}
         <Content style={{ minHeight: 'none' }} className='content-item'>
-          <ItemScroll data={teaData} marginLeft='40px' style={{ marginTop: '30%' }} title='ჩაი' titleColor='#00000' />
+          <ItemScroll
+            setShowCustomDrawer={setShowIndividualProductDataDrawer}
+            data={teaData}
+            marginLeft='40px'
+            style={{ marginTop: '30%' }}
+            title='ჩაი'
+            titleColor='#00000'
+          />
           <ItemScroll
             data={coffeecocktails}
             marginLeft='40px'
             style={{ marginTop: '30%' }}
+            setShowCustomDrawer={setShowIndividualProductDataDrawer}
             title='კოქტეილები'
             titleColor='#00000'
           />

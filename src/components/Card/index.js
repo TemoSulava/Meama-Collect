@@ -7,6 +7,7 @@ const Card = ({
   descriptionTitle,
   metaClassName = null,
   backgroundColor = null,
+  onClick,
   cardClassName,
   coverImage = null,
   imageAltText = 'image desc',
@@ -17,16 +18,11 @@ const Card = ({
   <AntCard
     className={cardClassName}
     hoverable={hoverable}
+    onClick={onClick}
     style={style}
     size={size}
     cover={
-      coverImage ? (
-        <img
-          alt={imageAltText}
-          style={{ maxWidth: '100%', maxHeight: '100%' }}
-          src={coverImage}
-        />
-      ) : null
+      coverImage ? <img alt={imageAltText} style={{ maxWidth: '100%', maxHeight: '100%' }} src={coverImage} /> : null
     }>
     {description ? <Meta title={descriptionTitle} className={metaClassName} description={description} /> : null}
   </AntCard>
