@@ -1,23 +1,31 @@
-import { Button, Drawer as AntDrawer,  Space } from 'antd'
-import React, {useEffect, useState} from 'react'
+import { Button, Drawer as AntDrawer, Space } from 'antd'
+import React, { useEffect, useState } from 'react'
 
-const Drawer = ({placement = 'bottom', showDrawer,  onOk = () => {}, onClose = () => {}  }) => {
+const Drawer = ({
+  placement = 'bottom',
+  renderDrawerTriggerButton = false,
+  showDrawer,
+  onOk = () => {},
+  onClose = () => {}
+}) => {
+  const [show, setShow] = useState(showDrawer)
 
-    const [show, setShow] = useState(showDrawer)
+  console.log(showDrawer)
 
-    console.log(showDrawer)
-
-    useEffect(() => {
-      setShow(showDrawer)
-    }, [showDrawer])
+  useEffect(() => {
+    setShow(showDrawer)
+  }, [showDrawer])
 
   return (
     <>
-      <Space>
-        <Button type='primary' onClick={() => setShow(true)}>
-          Open
-        </Button>
-      </Space>
+      {renderDrawerTriggerButton ? (
+        <Space>
+          <Button type='primary' onClick={() => setShow(true)}>
+            Open
+          </Button>
+        </Space>
+      ) : null}
+
       <AntDrawer
         placement={placement}
         width={500}
