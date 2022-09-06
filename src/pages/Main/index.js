@@ -17,7 +17,7 @@ const { Header, Footer, Content } = Layout
 
 const Main = () => {
   const { data, loading, error } = useFetch(projectApis.PRODUCTS)
-  const [showIndividualProductDataDrawer, setShowIndividualProductDataDrawer] = useState(false)
+  // const [showIndividualProductDataDrawer, setShowIndividualProductDataDrawer] = useState(false)
 
   if (error) console.error(error)
 
@@ -33,7 +33,6 @@ const Main = () => {
 
   const cookies = data[6]
 
-  console.log(showIndividualProductDataDrawer)
 
   return (
     <div className='main-component'>
@@ -42,24 +41,23 @@ const Main = () => {
           <SvgLoader className='site-logo' type='meama-logo' />
           <SvgLoader className='header-bg' type='header-svg' />
           <LanguageSelector />
-
           <ItemScroll
-            setShowCustomDrawer={setShowIndividualProductDataDrawer}
+            // setShowCustomDrawer={setShowIndividualProductDataDrawer}
             data={coffeeData}
             style={{ marginTop: '50px' }}
             title='ყავის მენიუ'
           />
-          <Drawer
+          {/* <Drawer
             setShowDrawer={setShowIndividualProductDataDrawer}
             onClose={() => setShowIndividualProductDataDrawer(false)}
             onOk={() => setShowIndividualProductDataDrawer(false)}
             showDrawer={showIndividualProductDataDrawer}
-          />
+          /> */}
         </Header>
         {/*TODO: NEED TO REFACTOR REDUNDANT ItemScroll usage*/}
         <Content style={{ minHeight: 'none' }} className='content-item'>
           <ItemScroll
-            setShowCustomDrawer={setShowIndividualProductDataDrawer}
+            // setShowCustomDrawer={setShowIndividualProductDataDrawer}
             data={teaData}
             marginLeft='40px'
             style={{ marginTop: '30%' }}
@@ -70,7 +68,7 @@ const Main = () => {
             data={coffeecocktails}
             marginLeft='40px'
             style={{ marginTop: '30%' }}
-            setShowCustomDrawer={setShowIndividualProductDataDrawer}
+            // setShowCustomDrawer={setShowIndividualProductDataDrawer}
             title='კოქტეილები'
             titleColor='#00000'
           />
