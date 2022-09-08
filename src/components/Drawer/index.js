@@ -10,7 +10,6 @@ const Drawer = ({
 }) => {
   const [show, setShow] = useState(showDrawer)
 
-  console.log(showDrawer)
 
   useEffect(() => {
     setShow(showDrawer)

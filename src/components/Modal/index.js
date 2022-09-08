@@ -7,6 +7,7 @@ const ModalComponent = ({
   title,
   buttonStyle,
   buttonText,
+  buttonColor,
   cancelText,
   onOk = () => {},
   onCancel = () => {},
@@ -25,7 +26,7 @@ const ModalComponent = ({
         shape={shape}
         type={buttonType}
         onClick={setShowModal}>
-        <p className='white-text'>{buttonText ? buttonText : icon}</p>
+        <p className={buttonColor}>{buttonText ? buttonText : icon}</p>
       </Button>
       <Modal
         cancelText={cancelText}

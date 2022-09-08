@@ -10,7 +10,7 @@ import projectApis from '../../apis'
 
 
 
-const LanguageSelector = () => {
+const LanguageSelector = ({customStyle = 'lang', buttonColor}) => {
   const [showLanguageSelector, setShowLanguageSelector] = useState(false)
   const [langRadioValue, setLangRadioValue] = useState(null)
 
@@ -27,13 +27,14 @@ const LanguageSelector = () => {
 
   if (error) console.error(error)
 
-  if (loading) return <div>Placeholder loading text...</div>
+  if (loading) return <div>Loading Data... Please Wait...</div>
 
   return (
     <Modal
       icon={<SvgLoader type='language-menu' />}
-      buttonStyle='lang'
+      buttonStyle={customStyle}
       noBorder
+      buttonColor={buttonColor}
       setShowModal={() => setShowLanguageSelector(true)}
       show={showLanguageSelector}
       onOk={() => {
@@ -47,7 +48,7 @@ const LanguageSelector = () => {
       title='ენა'
       buttonType='ghost'
       shape='circle'
-      ghost>
+    >
       <Radio className='flex-container' value={langRadioValue} onChange={handleRadioChange} data={data} />
     </Modal>
   )

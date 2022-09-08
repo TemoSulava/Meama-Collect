@@ -1,0 +1,34 @@
+.product-container {
+  max-width: 100%;
+  padding-right: 25px;
+  padding-left: 25px;
+  visibility: visible;
+  height: 100%;
+}
+
+.flex-item-style {
+    position: initial
+}
+
+.black-text {
+  color: #000000;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+.action-buttons {
+}
+
+.info-section {
+}
+
+.description {
+}
+
+.bottom {
+}
