@@ -40,46 +40,45 @@ const Main = () => {
   return (
     <div className='main-component'>
       <Layout style={{ background: '#fffff' }}>
-       <Switch>
-        <Route exact path='/productDetails/:productId'>
-          <ProductDetails />
-        </Route>
-       </Switch>
-        <Header className='grid-item-1' style={{ background: '#000000' }}>
-          <SvgLoader className='site-logo' type='meama-logo' />
-          <SvgLoader className='header-bg' type='header-svg' />
-          <LanguageSelector />
-          <ItemScroll
-            data={coffeeData}
-            style={{ marginTop: '50px' }}
-            title='ყავის მენიუ'
-          />
-         
-        </Header>
-        {/*TODO: NEED TO REFACTOR REDUNDANT ItemScroll usage*/}
-        <Content style={{ minHeight: 'none' }} className='content-item'>
-          <ItemScroll
-            data={teaData}
-            marginLeft='40px'
-            style={{ marginTop: '30%' }}
-            title='ჩაი'
-            titleColor='#00000'
-          />
-          <ItemScroll
-            data={coffeecocktails}
-            marginLeft='40px'
-            style={{ marginTop: '30%' }}
-            title='კოქტეილები'
-            titleColor='#00000'
-          />
-          <ItemScroll
-            data={cookies}
-            marginLeft='40px'
-            style={{ marginTop: '30%' }}
-            title='ორცხობილები'
-            titleColor='#00000'
-          />
-        </Content>
+        <Switch>
+          <Route exact path='/productDetails/:productId'>
+            <ProductDetails />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route exact path='/'>
+            <Header className='grid-item-1' style={{ background: '#000000' }}>
+              <SvgLoader className='site-logo' type='meama-logo' />
+              <SvgLoader className='header-bg' type='header-svg' />
+              <LanguageSelector />
+              <ItemScroll data={coffeeData} style={{ marginTop: '50px' }} title='ყავის მენიუ' />
+            </Header>
+            {/*TODO: NEED TO REFACTOR REDUNDANT ItemScroll usage*/}
+            <Content style={{ minHeight: 'none' }} className='content-item'>
+              <ItemScroll
+                data={teaData}
+                marginLeft='40px'
+                style={{ marginTop: '30%' }}
+                title='ჩაი'
+                titleColor='#00000'
+              />
+              <ItemScroll
+                data={coffeecocktails}
+                marginLeft='40px'
+                style={{ marginTop: '30%' }}
+                title='კოქტეილები'
+                titleColor='#00000'
+              />
+              <ItemScroll
+                data={cookies}
+                marginLeft='40px'
+                style={{ marginTop: '30%' }}
+                title='ორცხობილები'
+                titleColor='#00000'
+              />
+            </Content>
+          </Route>
+        </Switch>
       </Layout>
     </div>
   )
