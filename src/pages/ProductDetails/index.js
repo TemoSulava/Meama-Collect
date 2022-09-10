@@ -19,15 +19,48 @@ const ProductDetails = () => {
 
   const { data, loading, error } = useFetch(projectApis.PRODUCTS)
 
- if (error) console.error(error)
+  if (error) console.error(error)
 
- if (loading) return <div>Placeholder loading text...</div>
+  if (loading) return <div>Placeholder loading text...</div>
 
- if (!data) return null
+  if (!data) return null
 
- console.log(data)
+  const findProductById = (array, id) => {
+    if (!id) return array
 
- //create recursive function to check all the existing ids in the api
+
+    for (const item of array) {
+      console.log(item)
+      if (item.id === id) {
+        return item
+      }
+
+      if (
+        'products' in item &&
+        item.products.length > 0 &&
+        !('subCategories' in item) &&
+        item.subCategories.length < 1
+      ) {
+        return findProductById(item.products, id)
+      }
+      if (
+        'subCategories' in item &&
+        item.subCategories.length > 0 &&
+        !('products' in item) &&
+        item.products.length < 1
+      ) {
+       return  findProductById(item.subCategories, id)
+      }
+      if ('products' in item && item.products.length > 0 && 'subCategories' in item && item.subCategories.length > 0) {
+       return  findProductById(item.products, id) || findProductById(item.subCategories, id)
+      }
+    }
+  }
+
+  console.log(findProductById(data, 17))
+  // console.log(findProductById(data))
+
+  //create recursive function to check all the existing ids in the api
 
   return (
     <div className='product-container'>
@@ -37,9 +70,7 @@ const ProductDetails = () => {
           <LanguageSelector customStyle='flex-item-style' buttonColor='black-text' />
         </div>
       </div>
-      <div className='info-section'>
-
-      </div>
+      <div className='info-section'></div>
       <div className='description'></div>
       <div className='bottom'></div>
     </div>
