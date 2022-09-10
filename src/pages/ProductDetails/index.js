@@ -29,9 +29,7 @@ const ProductDetails = () => {
 
  function findProductById(data, id) {
    
-   console.log(typeof id)
    let queue = [...data]
-   console.log(queue)
 
    while (queue.length) {
      const current = queue.shift()
