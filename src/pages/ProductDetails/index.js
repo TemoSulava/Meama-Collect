@@ -25,42 +25,33 @@ const ProductDetails = () => {
 
   if (!data) return null
 
-  const findProductById = (array, id) => {
-    if (!id) return array
 
 
-    for (const item of array) {
-      console.log(item)
-      if (item.id === id) {
-        return item
-      }
+ function findProductById(data, id) {
+   
+   console.log(typeof id)
+   let queue = [...data]
+   console.log(queue)
 
-      if (
-        'products' in item &&
-        item.products.length > 0 &&
-        !('subCategories' in item) &&
-        item.subCategories.length < 1
-      ) {
-        return findProductById(item.products, id)
-      }
-      if (
-        'subCategories' in item &&
-        item.subCategories.length > 0 &&
-        !('products' in item) &&
-        item.products.length < 1
-      ) {
-       return  findProductById(item.subCategories, id)
-      }
-      if ('products' in item && item.products.length > 0 && 'subCategories' in item && item.subCategories.length > 0) {
-       return  findProductById(item.products, id) || findProductById(item.subCategories, id)
-      }
-    }
-  }
+   while (queue.length) {
+     const current = queue.shift()
+     if (current.id === id) {
+       return current
+     }
 
-  console.log(findProductById(data, 17))
-  // console.log(findProductById(data))
+     if (current.products?.length) {
+       queue.push(...current.products)
+     }
 
-  //create recursive function to check all the existing ids in the api
+     if (current.subCategories?.length) {
+       queue.push(...current.subCategories)
+     }
+   }
+ }
+
+ let result = findProductById(data && data, Number(productId))
+
+ console.log(result)
 
   return (
     <div className='product-container'>
