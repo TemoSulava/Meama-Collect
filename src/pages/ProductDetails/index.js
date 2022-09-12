@@ -46,7 +46,6 @@ const ProductDetails = () => {
 
   let product = findProductById(data && data, Number(productId))
 
-  console.log(product)
 
   return (
     <div className='product-container'>

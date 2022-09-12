@@ -9,7 +9,7 @@ const RadioComponent = ({data, onChange, value, className}) => {
         <>
           <img key={language.id} src={language.imageUrl} alt='Language' />
           <Radio.Group onChange={onChange} value={value}>
-            <Radio key={language.id} value={language.name}>
+            <Radio key={language.id} value={language.code}>
               {language.name}
             </Radio>
           </Radio.Group>

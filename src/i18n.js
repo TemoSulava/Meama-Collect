@@ -10,20 +10,34 @@ i18n
     debug: true,
     fallbackLng: 'en',
     interpolation: {
-      escapeValue: false 
+      escapeValue: false
     },
     resources: {
       en: {
         translation: {
-          hello: {
-            hello: 'Hello!'
+          langComponent: {
+            select: 'Select',
+            close: 'Close',
+            lang: 'Select Language',
+            loadingData: 'Loading Data... Please Wait...',
+            coffeeMenu: 'Coffee Menu',
+            tea: 'Tea',
+            cocktails: 'Cocktails',
+            cookies: 'Cookies'
           }
         }
       },
       ka: {
         translation: {
-          hello: {
-            hello: 'გამარჯობა!'
+          langComponent: {
+            select: 'არჩევა',
+            close: 'დახურვა',
+            lang: 'ენის არჩევა',
+            loadingData: 'ინფორმაცია იტვირთება... გთხოვთ დაიცადოთ...',
+            coffeeMenu: 'ყავის მენიუ',
+            tea: 'ჩაი',
+            cocktails: 'კოქტეილები',
+            Cookies: 'ორცხობილები'
           }
         }
       }

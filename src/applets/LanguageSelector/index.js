@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
 
 import Modal from '../../components/Modal'
 import Radio from '../../components/Radio'
@@ -14,12 +17,21 @@ const LanguageSelector = ({customStyle = 'lang', buttonColor}) => {
   const [showLanguageSelector, setShowLanguageSelector] = useState(false)
   const [langRadioValue, setLangRadioValue] = useState(null)
 
-  const { data, loading, error } = useFetch(projectApis.SUPPORTED_LANGUAGES)
+
+  const { t, i18n } = useTranslation()
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng)
+  }
+
+
+  const { data, loading, error } = useFetch(projectApis.SUPPORTED_LANGUAGES, i18n.language)
 
   const revertToInitialState = () => {
     setShowLanguageSelector(false)
     setLangRadioValue(null)
   }
+
 
   const handleRadioChange = (e) => {
     setLangRadioValue(e.target.value)
@@ -27,7 +39,7 @@ const LanguageSelector = ({customStyle = 'lang', buttonColor}) => {
 
   if (error) console.error(error)
 
-  if (loading) return <div>Loading Data... Please Wait...</div>
+  if (loading) return <div>{t('langComponent.loadingData')}</div>
 
   return (
     <Modal
@@ -39,16 +51,16 @@ const LanguageSelector = ({customStyle = 'lang', buttonColor}) => {
       show={showLanguageSelector}
       onOk={() => {
         revertToInitialState()
+        changeLanguage(langRadioValue)
       }}
       onCancel={() => {
         revertToInitialState()
       }}
-      okText='არჩევა'
-      cancelText='დახურვა'
-      title='ენა'
+      okText={t('langComponent.select')}
+      cancelText={t('langComponent.close')}
+      title={t('langComponent.lang')}
       buttonType='ghost'
-      shape='circle'
-    >
+      shape='circle'>
       <Radio className='flex-container' value={langRadioValue} onChange={handleRadioChange} data={data} />
     </Modal>
   )
