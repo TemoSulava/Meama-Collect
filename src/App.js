@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import  {BrowserRouter as Router} from 'react-router-dom'
 
 import Main from './pages/Main'
-import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   const { t, i18n } = useTranslation()
