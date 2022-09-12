@@ -9,7 +9,7 @@ import SvgLoader from '../../components/SvgLoader'
 
 import useFetch from '../../customHooks/useFetch'
 
-import projectApis from '../../apis'
+import UseProjectApis from '../../apis/ApiGenerator'
 
 
 
@@ -24,8 +24,8 @@ const LanguageSelector = ({customStyle = 'lang', buttonColor}) => {
     i18n.changeLanguage(lng)
   }
 
-
-  const { data, loading, error } = useFetch(projectApis.SUPPORTED_LANGUAGES, i18n.language)
+  const { SUPPORTED_LANGUAGES } = UseProjectApis()
+  const { data, loading, error } = useFetch(SUPPORTED_LANGUAGES, i18n.language)
 
   const revertToInitialState = () => {
     setShowLanguageSelector(false)

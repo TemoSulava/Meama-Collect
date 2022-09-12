@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom'
 
 import { Layout } from 'antd'
 
-import projectApis from '../../apis'
 
 import LanguageSelector from '../../applets/LanguageSelector'
 
@@ -16,11 +15,14 @@ import ItemScroll from '../../components/ItemScroll'
 import ProductDetails from '../ProductDetails'
 
 import './index.css'
+import UseProjectApis from '../../apis/ApiGenerator'
 
 const { Header, Footer, Content } = Layout
 
 const Main = ({t, i18n}) => {
-  const { data, loading, error } = useFetch(projectApis.PRODUCTS, i18n.language)
+  const { PRODUCTS } = UseProjectApis()
+  const { data, loading, error } = useFetch(PRODUCTS, i18n.language)
+
 
 
  
@@ -47,7 +49,7 @@ const Main = ({t, i18n}) => {
       <Layout style={{ background: '#fffff' }}>
         <Switch>
           <Route exact path='/productDetails/:productId'>
-            <ProductDetails />
+            <ProductDetails t={t} i18n={i18n} />
           </Route>
         </Switch>
         <Switch>

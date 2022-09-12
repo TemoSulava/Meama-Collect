@@ -23,7 +23,8 @@ i18n
             coffeeMenu: 'Coffee Menu',
             tea: 'Tea',
             cocktails: 'Cocktails',
-            cookies: 'Cookies'
+            cookies: 'Cookies',
+            description: 'Description'
           }
         }
       },
@@ -37,7 +38,8 @@ i18n
             coffeeMenu: 'ყავის მენიუ',
             tea: 'ჩაი',
             cocktails: 'კოქტეილები',
-            Cookies: 'ორცხობილები'
+            Cookies: 'ორცხობილები',
+            description: 'აღწერა'
           }
         }
       }

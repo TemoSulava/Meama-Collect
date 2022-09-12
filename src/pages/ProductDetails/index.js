@@ -6,18 +6,20 @@ import LanguageSelector from '../../applets/LanguageSelector'
 
 import useFetch from '../../customHooks/useFetch'
 
-import projectApis from '../../apis'
+import UseProjectApis from '../../apis/ApiGenerator'
 
 import { useParams, useHistory } from 'react-router-dom'
 
 import './index.css'
 
-const ProductDetails = () => {
+const ProductDetails = ({t, i18n}) => {
   const { productId } = useParams()
 
   const history = useHistory()
 
-  const { data, loading, error } = useFetch(projectApis.PRODUCTS)
+  const { PRODUCTS } = UseProjectApis()
+
+  const { data, loading, error } = useFetch(PRODUCTS, PRODUCTS)
 
   if (error) console.error(error)
 
@@ -69,7 +71,7 @@ const ProductDetails = () => {
         </div>
       </div>
       <div className='description'>
-        <h3 className='descr-title'> აღწერა </h3>
+        <h3 className='descr-title'>{t('langComponent.description')} </h3>
         <p className='descr-text' dangerouslySetInnerHTML={{ __html: product?.description }} />
       </div>
     </div>
