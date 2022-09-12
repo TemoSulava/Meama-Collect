@@ -2,12 +2,11 @@
   max-width: 100%;
   padding-right: 25px;
   padding-left: 25px;
-  visibility: visible;
   height: 100%;
 }
 
 .flex-item-style {
-    position: initial
+  position: initial;
 }
 
 .black-text {
@@ -18,17 +17,34 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
+  height: fit-content;
+  margin-right: -25px;
+  margin-left: -25px;
 }
 
-.action-buttons {
+.product-data {
+  padding-top: 50%;
 }
+
 
 .info-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  margin-bottom: 30px;
+}
+
+.product-img {
+  height: 80%;
+  width: auto;
 }
 
 .description {
+  font-size: 16px;
+  color: #000;
 }
 
-.bottom {
+.descr-text {
+  font-weight: bold;
 }

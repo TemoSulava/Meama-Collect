@@ -25,31 +25,28 @@ const ProductDetails = () => {
 
   if (!data) return null
 
+  function findProductById(data, id) {
+    let queue = [...data]
 
+    while (queue.length) {
+      const current = queue.shift()
+      if (current.id === id) {
+        return current
+      }
 
- function findProductById(data, id) {
-   
-   let queue = [...data]
+      if (current.products?.length) {
+        queue.push(...current.products)
+      }
 
-   while (queue.length) {
-     const current = queue.shift()
-     if (current.id === id) {
-       return current
-     }
+      if (current.subCategories?.length) {
+        queue.push(...current.subCategories)
+      }
+    }
+  }
 
-     if (current.products?.length) {
-       queue.push(...current.products)
-     }
+  let product = findProductById(data && data, Number(productId))
 
-     if (current.subCategories?.length) {
-       queue.push(...current.subCategories)
-     }
-   }
- }
-
- let result = findProductById(data && data, Number(productId))
-
- console.log(result)
+  console.log(product)
 
   return (
     <div className='product-container'>
@@ -59,9 +56,23 @@ const ProductDetails = () => {
           <LanguageSelector customStyle='flex-item-style' buttonColor='black-text' />
         </div>
       </div>
-      <div className='info-section'></div>
-      <div className='description'></div>
-      <div className='bottom'></div>
+      <div className='info-section'>
+        <div className='left-column'>
+          <div className='product-data'>
+            <h3 style={{ fontWeight: 'bold' }}>{product?.name}</h3>
+            <h3 style={{ fontWeight: 'bold', marginBottom: '40px' }}>{`${product?.price}₾`}</h3>
+            <p>{product?.specifications[0]?.name}</p>
+            <h3 style={{ fontWeight: 'bold', marginBottom: '40px' }}>{product?.specifications[0]?.value}</h3>
+          </div>
+        </div>
+        <div className='right-column'>
+          <img className='product-img' src={product?.mainPhoto} alt='' />
+        </div>
+      </div>
+      <div className='description'>
+        <h3 className='descr-title'> აღწერა </h3>
+        <p className='descr-text' dangerouslySetInnerHTML={{ __html: product?.description }} />
+      </div>
     </div>
   )
 }
