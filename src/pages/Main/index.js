@@ -57,7 +57,7 @@ const Main = ({t, i18n}) => {
             <Header className='grid-item-1' style={{ background: '#000000' }}>
               <SvgLoader className='site-logo' type='meama-logo' />
               <SvgLoader className='header-bg' type='header-svg' />
-              <LanguageSelector  />
+              <LanguageSelector />
               <ItemScroll data={coffeeData} style={{ marginTop: '50px' }} title={t('langComponent.coffeeMenu')} />
             </Header>
             {/*TODO: NEED TO REFACTOR REDUNDANT ItemScroll usage*/}
@@ -83,6 +83,27 @@ const Main = ({t, i18n}) => {
                 title={t('langComponent.cookies')}
                 titleColor='#00000'
               />
+              <footer className='footer-component'>
+                <div className='footer-container'>
+                  <div className='inner'>
+                    <div className='row no-spaces'>
+                      <div className='left-align'>
+                        <div>
+                          <p>Contact Us</p>
+                          <a style={{fontWeight: 'bold', fontSize: '20px'}} href='tel:08 08'>*08 08</a>
+                        </div>
+                      </div>
+                      <div className='right-align'>
+                        <div style={{justifyContent: 'flex-end', top: '-9%'}} className="socials">
+                          {/* <a href="https://meama.ge/ka/home" target="_blank">webpage</a>
+                          <a href="https://www.instagram.com/meamacollect/" target="_blank">instagram</a>
+                          <a href="https://www.facebook.com/MeamaCoffee" target="_blank">fb</a> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </footer>
             </Content>
           </Route>
         </Switch>
