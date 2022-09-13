@@ -57,7 +57,7 @@ const Main = ({t, i18n}) => {
             <Header className='grid-item-1' style={{ background: '#000000' }}>
               <SvgLoader className='site-logo' type='meama-logo' />
               <SvgLoader className='header-bg' type='header-svg' />
-              <LanguageSelector />
+              <LanguageSelector  />
               <ItemScroll data={coffeeData} style={{ marginTop: '50px' }} title={t('langComponent.coffeeMenu')} />
             </Header>
             {/*TODO: NEED TO REFACTOR REDUNDANT ItemScroll usage*/}

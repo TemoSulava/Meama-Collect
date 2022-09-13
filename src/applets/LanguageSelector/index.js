@@ -43,7 +43,7 @@ const LanguageSelector = ({customStyle = 'lang', buttonColor}) => {
 
   return (
     <Modal
-      icon={<SvgLoader type='language-menu' />}
+      icon={<SvgLoader dark langId={langRadioValue} type='language-menu' />}
       buttonStyle={customStyle}
       noBorder
       buttonColor={buttonColor}
